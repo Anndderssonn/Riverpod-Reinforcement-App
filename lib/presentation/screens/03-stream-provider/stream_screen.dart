@@ -14,12 +14,7 @@ class StreamScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Stream Provider')),
       body: randomNames.when(
-        data:
-            (data) => ListView.builder(
-              itemCount: data.length,
-              itemBuilder:
-                  (context, index) => ListTile(title: Text(data[index])),
-            ),
+        data: (data) => Center(child: Text(data)),
         error: (error, stackTrace) => Text('Error: $error'),
         loading: () => const Center(child: CircularProgressIndicator()),
       ),
